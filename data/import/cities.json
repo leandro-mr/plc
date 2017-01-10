@@ -1,0 +1,23 @@
+[{
+	"name": "Oslo",
+	"latitude": 59.913869,
+	"longitude": 10.752245,
+	"country": {
+		"name": "Norway"
+	},
+	"_playcloud": {
+		"creator": "adminId",
+		"deleted": false
+	}
+}, {
+	"name": "Stockholm",
+	"latitude": 59.329323,
+	"longitude": 18.068581,
+	"country": {
+		"name": "Sweden"
+	},
+	"_playcloud": {
+		"creator": "adminId",
+		"deleted": false
+	}
+}]
