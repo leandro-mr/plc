@@ -1,0 +1,18 @@
+[
+  {
+    "username": "Thor",
+    "birthday": "01/01/1980",
+    "displayName": "Thor",
+    "email": "thor@gmail.com",
+    "gender": 0,
+    "imageUrl": "path/to/cloud/storage",
+    "language": "en-US",
+    "country": {
+      "name": "Norway"
+    },
+    "_plc": {
+      "creator": "adminId",
+      "deleted": false
+    }
+  }
+]

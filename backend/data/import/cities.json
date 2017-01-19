@@ -1,22 +1,22 @@
 [{
 	"name": "Oslo",
-	"latitude": 59.913869,
-	"longitude": 10.752245,
+	"lat": 59.913869,
+	"long": 10.752245,
 	"country": {
 		"name": "Norway"
 	},
-	"_playcloud": {
+	"_plc": {
 		"creator": "adminId",
 		"deleted": false
 	}
 }, {
 	"name": "Stockholm",
-	"latitude": 59.329323,
-	"longitude": 18.068581,
+	"lat": 59.329323,
+	"long": 18.068581,
 	"country": {
 		"name": "Sweden"
 	},
-	"_playcloud": {
+	"_plc": {
 		"creator": "adminId",
 		"deleted": false
 	}
