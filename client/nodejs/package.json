@@ -1,0 +1,11 @@
+{
+  "name": "roo-client",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies" : {
+    "kinvey-node-sdk": "^3.3.4"
+  },
+  "source": [
+    "*.{js}"
+  ]
+}
