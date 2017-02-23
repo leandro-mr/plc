@@ -1,39 +1,12 @@
 /**
- * TBD
+ * Simple Kinvey Client
  * @flow
  */
 
-export default class SimpleKinvey {
+export default class KinveyClient {
 
   /*
-    HTTP Request
-
-      POST /user/:appKey/login HTTP/1.1
-      Content-Type: application/json
-      X-Kinvey-Api-Version: 1
-      Authorization: [Basic Auth with app credentials]
-
-      {
-        "username": "ivan",
-        "password": "123456"
-      }
-
-    HTTP Response
-
-      HTTP/1.1 200 OK
-      X-Kinvey-Api-Version: 1
-      Content-Type: application/json
-
-      {
-        "username": "ivan",
-        "location": "Cambridge, MA, USA",
-        "locale": "en-US",
-        "_kmd":
-        {
-          "lmt":"2012-06-29T13:02:11.864Z",
-          "authtoken":"368c9f15-01b4-4a49-9b8d-989f4b2d30ed.Vai/mloxDgUUiSwiRkA9kDvoBu5NvlZaEkGXrREY8G9="
-        }
-      }
+    Login a user on Kinvey BaaS
   */
   login () {
     return new Promise((resolve, reject) => {
@@ -85,21 +58,83 @@ export default class SimpleKinvey {
       .then(function(response) {
         console.log("[A] Checking response");
         if(response.ok) {
-          console.log("[A] Ok");
+          console.log("[A] Success");
           return response.json();
         } else {
           reject(response)
         }
       })
       .then(function(responseJson) {
-        console.log("[A] Digesting response");
-        resolve(responseJson.username)
+        console.log("[A] Response = " + JSON.stringify(responseJson));
+        resolve(responseJson._kmd.authtoken)
       })
       .catch(function(error) {
-        console.log("[A] Something got wrong");
+        console.log("[A] Something got wrong!");
         console.error(error);
       });
       console.log("login completed");
     })
   }
+
+  /*
+    Returns a list of points of interest
+  */
+  getPointsOfInterest (authToken, city) {
+    return new Promise((resolve, reject) => {
+      console.log("getPointsOfInterest started");
+
+      // [Kinvey] App credentials are used to bootstrap an app by authenticating the request that creates the user.
+      // App credentials + Session Auth
+      var appKey = "kid_r1T7SvaHl";
+      var sessionAuth = "Kinvey" + " " + authToken;
+      console.log("session auth = " + sessionAuth);
+
+      // [Web APIs] https://developer.mozilla.org/en-US/docs/Web/API/Headers
+      var headers = new Headers({
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": sessionAuth
+      });
+
+      // [Web APIs] https://developer.mozilla.org/en-US/docs/Web/API/Request/Request
+      var init = {
+        method: 'GET',
+        headers: headers,
+      };
+
+      query = "?query={\"city.name\":\"" + city + "\"}"
+
+      // MUST be HTTPS
+      // https://baas.kinvey.com/appdata/kid_r1T7SvaHl/pois
+      url = "https://baas.kinvey.com" + "/appdata/" + appKey + "/pois" + query
+
+      // ?query={"author.firstName":"Terry"}
+
+      console.log("url = " + url);
+      var loginRequest = new Request(url, init);
+
+      console.log("Fetching data...");
+      // Fetch
+      fetch(loginRequest)
+      .then(function(response) {
+        console.log("[A] Checking response");
+        if(response.ok) {
+          console.log("[A] Success");
+          return response.json();
+        } else {
+          reject(response)
+        }
+      })
+      .then(function(responseJson) {
+        console.log("[A] Response = " + JSON.stringify(responseJson));
+        resolve(responseJson)
+      })
+      .catch(function(error) {
+        console.log("[A] Something got wrong!");
+        console.error(error);
+      });
+      console.log("login completed");
+    })
+  }
+
 };

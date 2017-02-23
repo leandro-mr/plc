@@ -1,5 +1,5 @@
 /**
- * Landpage
+ * Main component
  * @flow
  */
 
@@ -11,40 +11,24 @@ import {
   View
 } from 'react-native';
 
-//import Login from './components/login';
-
-import SimpleKinvey from './simple-kinvey-sdk/kinvey-client';
+import PoIButton from './components/pois-button';
 
 export default class Roo extends Component {
 
   render() {
-    console.log("Calling login...");
-    var simpleKinvey = new SimpleKinvey();
-    simpleKinvey.login()
-    .then(function(response) {
-      console.log("[A] Ok");
-      console.log("[A] username = " + response);
-    })
-    .catch(function(error) {
-      console.log("[A] Something got wrong");
-      console.error(error);
-    });
-    console.log("Logging on has been called...");
-
     return (
 
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Hello, eeeeeeeeeeeeeeeee!!!!!!!!!!!!
+          Hello!
         </Text>
+        <PoIButton/>
       </View>
 
     );
   }
 }
 
-// REMOVED
-//        <Login/>
 
 const styles = StyleSheet.create({
   container: {
@@ -62,7 +46,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-  },
+  }
 });
 
 AppRegistry.registerComponent('Roo', () => Roo);
