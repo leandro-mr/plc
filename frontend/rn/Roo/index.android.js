@@ -26,7 +26,7 @@ export default class Roo extends Component {
       console.log("[A] username = " + response);
     })
     .catch(function(error) {
-      console.log("[A] ERROR");
+      console.log("[A] Something got wrong");
       console.error(error);
     });
     console.log("Logging on has been called...");

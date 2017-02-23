@@ -1,23 +1,25 @@
 [{
 	"name": "Oslo",
-	"lat": 59.913869,
-	"long": 10.752245,
+	"location": {
+		"lat": 59.8937803,
+		"long": 10.6446933
+	},
 	"country": {
 		"name": "Norway"
 	},
 	"_plc": {
-		"creator": "adminId",
-		"deleted": false
+		"creator": "plc"
 	}
 }, {
 	"name": "Stockholm",
-	"lat": 59.329323,
-	"long": 18.068581,
+	"location": {
+		"lat": 59.3260664,
+		"long": 17.8471221
+	},
 	"country": {
 		"name": "Sweden"
 	},
 	"_plc": {
-		"creator": "adminId",
-		"deleted": false
+		"creator": "plc"
 	}
 }]

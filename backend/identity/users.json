@@ -5,14 +5,18 @@
     "displayName": "Thor",
     "email": "thor@gmail.com",
     "gender": 0,
-    "imageUrl": "path/to/cloud/storage",
+    "imageUrl": "path/to/file",
     "language": "en-US",
+    "location": {
+  		"lat": 59.9399586,
+  		"long": 10.7195556
+  	},
+    "locationShared": true,
     "country": {
       "name": "Norway"
     },
     "_plc": {
-      "creator": "adminId",
-      "deleted": false
+      "creator": "appKey"
     }
   }
 ]
