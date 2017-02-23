@@ -1,0 +1,63 @@
+[{
+	"address": "Haakon VIIs gate 1, 0161",
+	"categories": [
+		"Toys",
+		"Kids"
+	],
+	"city": {
+		"name": "Oslo",
+		"location": {
+			"lat": 59.8937803,
+			"long": 10.6446933
+		},
+		"country": {
+			"name": "Norway"
+		},
+		"_plc": {
+			"creator": "plc"
+		}
+	},
+	"description": "string",
+	"imageResource": "path",
+	"location": {
+		"lat": 59.9299379,
+		"long": 10.6925593
+	},
+	"name": "Riktige Leker AS",
+	"scope": "public",
+	"weblink": "riktigeleker.no",
+	"_plc": {
+		"creator": "userId"
+	}
+}, {
+	"address": "Alna senter, ALNA Senter, Strømsveien 245, 0614",
+	"categories": [
+		"Toys",
+		"Kids"
+	],
+	"city": {
+		"name": "Oslo",
+		"location": {
+			"lat": 59.8937803,
+			"long": 10.6446933
+		},
+		"country": {
+			"name": "Norway"
+		},
+		"_plc": {
+			"creator": "plc"
+		}
+	},
+	"description": "string",
+	"imageResource": "path",
+	"location": {
+		"lat": 59.9299286,
+		"long": 10.6925593
+	},
+	"name": "TOYS'R'US",
+	"scope": "public",
+	"weblink": "toysrus.no",
+	"_plc": {
+		"creator": "userId"
+	}
+}]
